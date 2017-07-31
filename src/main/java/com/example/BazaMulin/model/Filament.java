@@ -17,7 +17,7 @@ import javax.validation.constraints.Pattern;
 public class Filament extends AbstractPersistable<Long> {
 
 
-    @Column(name = "FILAMENT_CODENAME", nullable = false)
+    @Column(name = "FILAMENT_CODENAME", nullable = false, unique = true)
     @NotNull
     @NotEmpty(message = "Pole nie może być puste")
     @Pattern(regexp = "[0-9]{4}", message = "Wymagane cztery cyfry")
@@ -27,15 +27,26 @@ public class Filament extends AbstractPersistable<Long> {
     @Column(name = "QUANTITY",nullable = false)
     @NotNull
     @NotEmpty(message = "Pole nie może być puste")
-    @Pattern(regexp = "[0-9]", message = "Wymagane cyfry")
+    @Pattern(regexp = "[0-9]+", message = "Wymagane cyfry")
     private String quantity;
 
-    public Filament(String filamentCodename, String quantity) {
+    public Filament(Long id, String filamentCodename, String quantity) {
+        this.getId();
         this.filamentCodename = filamentCodename;
         this.quantity = quantity;
     }
 
     public Filament() {
+    }
+
+    @Override
+    public Long getId() {
+        return super.getId();
+    }
+
+    @Override
+    public void setId(Long id) {
+        super.setId(id);
     }
 
     public String getFilamentCodename() {

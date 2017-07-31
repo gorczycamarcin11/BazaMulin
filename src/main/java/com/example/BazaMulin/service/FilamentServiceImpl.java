@@ -5,9 +5,7 @@ import com.example.BazaMulin.model.Filament;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by marcin on 30.07.17.
@@ -31,10 +29,10 @@ public class FilamentServiceImpl implements FilamentService {
     }
 
     @Override
-    public Set<Filament> findAll() {
+    public List<Filament> findAll() {
 
         Collection<Filament> collection = filamentDAO.findAllOrderByFilamentCodenameAsc();
-        Set<Filament> filaments = new LinkedHashSet<>();
+        List<Filament> filaments = new ArrayList<>();
         collection.forEach(filaments::add);
         return filaments;
     }

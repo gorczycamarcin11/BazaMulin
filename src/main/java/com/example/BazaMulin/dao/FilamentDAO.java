@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -15,5 +16,5 @@ public interface FilamentDAO extends CrudRepository<Filament, Long> {
 
 
     @Query("select f from Filament f order by f.filamentCodename asc")
-    Set<Filament> findAllOrderByFilamentCodenameAsc();
+    List<Filament> findAllOrderByFilamentCodenameAsc();
 }

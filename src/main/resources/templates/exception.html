@@ -13,32 +13,16 @@
     <title>Witaj</title>
 </head>
 
-<body class="container">
-<h1>Lista mulin</h1>
-
+<body class="container text-center">
+<h1>Podana mulina już jest w bazie</h1>
 <div class="panel panel-default">
-    <div class="panel-heading"></div>
     <div class="panel-body">
-        <table class="table">
-            <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nazwa kodowa muliny</th>
-                <th>Ilość</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="filament : ${list}">
-                <td th:text="${filament.id}">Id</td>
-                <td th:text="${filament.filamentCodename}">Nazwa kodowa muliny</td>
-                <td th:text="${filament.quantity}">Ilość</td>
-                <td>
-                    <a href="#" type="button" class="btn btn-default">Modyfikuj</a>
-                    <a href="#" type="button" class="btn btn-danger">Usuń</a>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+        <div class=" panel panel-heading text-center">Wybierz akcję</div>
+        <td>
+            <a type="button" class="btn btn-primary" href="/add">Dodaj</a>
+            <a type="button" class="btn btn-default" href="/list">Lista</a>
+            <a type="button" class="btn btn-danger" href="/search">Znajdź</a>
+        </td>
     </div>
 </div>
 
