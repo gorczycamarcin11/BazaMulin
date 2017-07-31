@@ -13,18 +13,18 @@
 <body class="text-center">
 <h1>Dodaj mulinę</h1>
 
-<form class="form-group" th:object="${filament}" th:action="@{/add}" method="post">
+<form class="container" th:object="${filament}" th:action="@{/add}" method="post">
     <div>
         <label for="filamentCodename">Kod muliny: </label>
-        <input class="form-control" type="text" th:field="*{filamentCodename}" id="filamentCodename" name="filamentCodename"/>
+        <input class="form-control text-center" type="text" th:field="*{filamentCodename}" id="filamentCodename" name="filamentCodename"/>
         <div class="help-block" th:if="${#fields.hasErrors('filamentCodename')}" th:errors="*{filamentCodename}"></div>
     </div>
     <div>
         <label for="quantity">Ilość: </label>
-        <input class="form-control" type="text" th:field="*{quantity}" id="quantity" name="quantity"/>
+        <input class="form-control text-center" type="text" th:field="*{quantity}" id="quantity" name="quantity"/>
         <div class="help-block" th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}"></div>
     </div>
-    <div class="input-group">
+    <div>
         <button type="submit" class="btn btn-primary">Send</button>
     </div>
 </form>
