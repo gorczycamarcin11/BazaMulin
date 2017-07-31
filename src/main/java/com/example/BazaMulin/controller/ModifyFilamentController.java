@@ -18,7 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class ModifyFilamentController {
 
     @Autowired
-    FilamentService filamentServiceImpl;
+    private FilamentService filamentServiceImpl;
 
 
     @GetMapping("/{id}")

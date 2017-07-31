@@ -13,4 +13,5 @@ public interface FilamentService {
     void delete(long id);
     List<Filament> findAll();
     Filament get(long id);
+    List<Filament> findByCodename(String codename);
 }

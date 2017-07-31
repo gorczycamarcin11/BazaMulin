@@ -17,7 +17,7 @@ import java.util.*;
 public class FilamentServiceImpl implements FilamentService {
 
     @Autowired
-    FilamentDAO filamentDAO;
+    private FilamentDAO filamentDAO;
 
     @Override
     public boolean save(Filament filament) {
@@ -35,13 +35,22 @@ public class FilamentServiceImpl implements FilamentService {
 
         Collection<Filament> collection = filamentDAO.findAllOrderByFilamentCodenameAsc();
         List<Filament> filaments = new ArrayList<>();
-        collection.forEach(filaments::add);
+        filaments.addAll(collection);
         return filaments;
     }
 
     @Override
     public Filament get(long id) {
         return filamentDAO.findOne(id);
+    }
+
+    @Override
+    public List<Filament> findByCodename(String codename) {
+
+        Collection<Filament> collection = filamentDAO.findFilamentByFilamentCodename(codename);
+        List<Filament> filaments = new ArrayList<>();
+        filaments.addAll(collection);
+        return filaments;
     }
 
 }

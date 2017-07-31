@@ -20,7 +20,7 @@ import javax.validation.Valid;
 public class AddFilamentController {
 
     @Autowired
-    FilamentService filamentServiceImpl;
+    private FilamentService filamentServiceImpl;
 
     @GetMapping
     public ModelAndView add() {

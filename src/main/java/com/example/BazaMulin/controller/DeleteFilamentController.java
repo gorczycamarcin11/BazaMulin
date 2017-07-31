@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class DeleteFilamentController {
 
     @Autowired
-    FilamentService filamentServiceImpl;
+    private FilamentService filamentServiceImpl;
 
     @GetMapping("/{id}")
     public ModelAndView deleteFilament(@PathVariable("id") Long id){

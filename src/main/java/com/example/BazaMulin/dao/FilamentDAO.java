@@ -17,6 +17,9 @@ import java.util.Set;
 @Repository
 public interface FilamentDAO extends JpaRepository<Filament, Long> {
 
+    @Query("select f from Filament f where f.filamentCodename=:codename")
+    List<Filament> findFilamentByFilamentCodename(@Param("codename") String codename);
+
     @Query("select f from Filament f order by f.filamentCodename asc")
     List<Filament> findAllOrderByFilamentCodenameAsc();
 

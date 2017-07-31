@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class ListFilamentController {
 
     @Autowired
-    FilamentService filamentServiceImpl;
+    private FilamentService filamentServiceImpl;
 
     @GetMapping
     public ModelAndView listFilament(){
