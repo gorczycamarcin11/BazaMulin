@@ -12,4 +12,5 @@ public interface FilamentService {
     boolean save(Filament filament);
     void delete(long id);
     List<Filament> findAll();
+    Filament get(long id);
 }

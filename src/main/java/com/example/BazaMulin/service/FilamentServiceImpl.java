@@ -5,6 +5,8 @@ import com.example.BazaMulin.model.Filament;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.*;
 
 /**
@@ -36,4 +38,10 @@ public class FilamentServiceImpl implements FilamentService {
         collection.forEach(filaments::add);
         return filaments;
     }
+
+    @Override
+    public Filament get(long id) {
+        return filamentDAO.findOne(id);
+    }
+
 }
