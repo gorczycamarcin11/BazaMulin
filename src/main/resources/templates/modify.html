@@ -11,12 +11,12 @@
     <title>Form</title>
 </head>
 <body class="text-center">
-<h1>Dodaj mulinę</h1>
+<h1>Modyfikuj ilość</h1>
 
 <form class="container" th:object="${filament}" th:action="@{/add}" method="post">
     <div>
         <label for="filamentCodename">Kod muliny: </label>
-        <input class="form-control text-center" type="text" th:field="*{filamentCodename}" id="filamentCodename" name="filamentCodename"/>
+        <input class="form-control text-center" type="text" readonly = "readonly" th:field="*{filamentCodename}" id="filamentCodename" name="filamentCodename"/>
         <div class="help-block" th:if="${#fields.hasErrors('filamentCodename')}" th:errors="*{filamentCodename}"></div>
     </div>
     <div>
