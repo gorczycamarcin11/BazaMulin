@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html xmlns:th="http://www.thymeleaf.org">
-<head >
+<head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -17,27 +17,37 @@
 <h1>Lista mulin</h1>
 
 <div class="panel panel-default">
-    <a href="/" type="button" class="btn btn-primary">Strona główna</a>
-    <div class="panel-heading"></div>
-    <div class="panel-body">
-        <table class="table">
-            <thead>
-            <tr>
-                <th>Nazwa kodowa muliny</th>
-                <th>Ilość</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="filament : ${list}">
-                <td th:text="${filament.filamentCodename}">Nazwa kodowa muliny</td>
-                <td th:text="${filament.quantity}">Ilość</td>
-                <td>
-                    <a th:href="@{/modify/{id} (id=${filament.id})}" type="button" class="btn btn-default">Modyfikuj</a>
-                    <a th:href="@{/delete/{id} (id=${filament.id})}" type="button" class="btn btn-danger">Usuń</a>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+    <div class="panel panel-default">
+        <div class="panel-body text-center">
+            <div class=" panel panel-heading">Wybierz akcję</div>
+            <td>
+                <a type="button" class="btn btn-primary" href="/add">Dodaj</a>
+                <a type="button" class="btn btn-info" href="/search">Szukaj</a>
+                <a type="button" class="btn btn-default" href="/">Strona główna</a>
+            </td>
+        </div>
+        <div class="panel-heading"></div>
+        <div class="panel-body">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Nazwa kodowa muliny</th>
+                    <th>Ilość</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="filament : ${list}">
+                    <td th:text="${filament.filamentCodename}">Nazwa kodowa muliny</td>
+                    <td th:text="${filament.quantity}">Ilość</td>
+                    <td>
+                        <a th:href="@{/modify/{id} (id=${filament.id})}" type="button"
+                           class="btn btn-warning">Modyfikuj</a>
+                        <a th:href="@{/delete/{id} (id=${filament.id})}" type="button" class="btn btn-danger">Usuń</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 

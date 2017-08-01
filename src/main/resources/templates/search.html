@@ -13,18 +13,17 @@
 <body class="text-center">
 <h1>Znajdź mulinę</h1>
 
-<form class="container" th:object="${filament}" th:action="@{/search}" method="postgit ">
+<form class="container" th:object="${filament}" th:action="@{/search}" method="post">
     <div>
         <label for="filamentCodename">Kod muliny: </label>
         <input class="form-control text-center" type="text" th:field="*{filamentCodename}" id="filamentCodename" name="filamentCodename"/>
-        <div class="help-block" th:if="${#fields.hasErrors('filamentCodename')}" th:errors="*{filamentCodename}"></div>
     </div>
     <div>
-        <button type="submit" class="btn btn-primary">Szukaj</button>
+        <button type="submit" class="btn btn-info">Szukaj</button>
     </div>
 </form>
 <br>
-<a href="/" type="button" class="btn btn-primary">Strona główna</a>
+<a href="/" type="button" class="btn btn-default">Strona główna</a>
 </br>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

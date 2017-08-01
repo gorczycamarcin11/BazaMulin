@@ -27,14 +27,12 @@ public class SearchFilamentController {
     }
 
     @PostMapping
-    public ModelAndView searchFilamentForm(String codename) {
+    public ModelAndView searchFilamentForm(@RequestParam("filamentCodename") String filamentCodename) {
 
-        ModelAndView mav =new ModelAndView("result");
-        mav.addObject("list", filamentServiceImpl.findByCodename(codename));
+        ModelAndView mav =new ModelAndView("list");
+        mav.addObject("list", filamentServiceImpl.findByCodename(filamentCodename));
 
         return mav;
-
     }
-
 }
 

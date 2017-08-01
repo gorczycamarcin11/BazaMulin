@@ -45,9 +45,9 @@ public class FilamentServiceImpl implements FilamentService {
     }
 
     @Override
-    public List<Filament> findByCodename(String codename) {
+    public List<Filament> findByCodename(String filamentCodename) {
 
-        Collection<Filament> collection = filamentDAO.findFilamentByFilamentCodename(codename);
+        Collection<Filament> collection = filamentDAO.findFilamentByFilamentCodename(filamentCodename);
         List<Filament> filaments = new ArrayList<>();
         filaments.addAll(collection);
         return filaments;
