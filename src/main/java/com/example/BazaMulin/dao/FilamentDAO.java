@@ -17,7 +17,7 @@ import java.util.Set;
 @Repository
 public interface FilamentDAO extends JpaRepository<Filament, Long> {
 
-    @Query("select f from Filament f where f.filamentCodename=:filamentCodename")
+    @Query("select f from Filament f where f.filamentCodename LIKE CONCAT('%',:filamentCodename,'%')")
     List<Filament> findFilamentByFilamentCodename(@Param("filamentCodename") String filamentCodename);
 
     @Query("select f from Filament f order by f.filamentCodename asc")
