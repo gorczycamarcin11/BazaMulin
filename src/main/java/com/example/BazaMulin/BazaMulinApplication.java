@@ -8,5 +8,9 @@ import java.io.IOException;
 @SpringBootApplication
 public class BazaMulinApplication {
 
-	public static void main(String[] args){SpringApplication.run(BazaMulinApplication.class, args);}
+    public static void main(String[] args) throws IOException {
+        SpringApplication.run(BazaMulinApplication.class, args);
+        ProcessBuilder pb = new ProcessBuilder("explorer", "http://localhost:9090");
+        pb.start();
+    }
 }
